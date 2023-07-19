@@ -5,7 +5,16 @@ addpath("SBS_pipeline\")
 clc;
 
 %% read the data from the file
-data = dlmread("Data\20220709_zebrafish_ECM06_PT40ms_100freq_NEP100Hz_PW60ns_xyscan\PW60ns_x20y60z0um_xpt2ypt2z2um_PT40ms_100freq_NEP100Hz.txt" ,'\t',5, 1);
+% Load data from zip file
+folder = 'Data/20220709_zebrafish_ECM06_PT40ms_100freq_NEP100Hz_PW60ns_xyscan/' ;
+file_txt = 'PW60ns_x20y60z0um_xpt2ypt2z2um_PT40ms_100freq_NEP100Hz.txt' ;
+file_zip = [file_txt(1:end-3) 'zip'] ; % replacing .txt by .zip
+if isfile([folder file_txt])
+    data = dlmread([folder file_txt],'\t',5, 1);
+else 
+    unzip([folder file_zip], folder) ;
+    data = dlmread([folder file_txt],'\t',5, 1);
+end
 
 %%  Initialize variables - acquisition settings
 % the piezo stage delay 40ms * 4 = 160 ms;
