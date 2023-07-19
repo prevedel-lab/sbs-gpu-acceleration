@@ -1,13 +1,7 @@
-!!! todo
-    They all use the old SBS pipeline. 
-    Should I upgrade them ? or keep
-    the historical one ?
-    (or even better, not dupplicate the whole pipelines and files, and reference the official one)
 
 ## Double peak criteria
 - data : pure water
 - usage : determination of the threshold value to distinguish between single and double peaks.
-
 
 ## Double peak Zebrafish
 - data : Zebrafish XY and XZ

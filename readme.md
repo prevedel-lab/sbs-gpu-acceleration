@@ -13,7 +13,7 @@ This repository contains data and code used by Fan xxx during his work on the pa
 This is the software used to process and analyze the recorded data. You can test it with the included 2 datasets (XY and XZ plane of a Zebrafish).
 Read more about it [here](./Matlab-pipeline/readme.md).
 
-The code and the precompiled binaries were tested and are running with the following configuration : Matlab xxxx.x and Cuda xx.xx. If you're running a different setup, you might have to recompile or rewrite a bit the code.
+The code and the precompiled binaries were tested and are running with the following configuration : Matlab 2021.b and Cuda 11.5. If you're running a different setup, you might have to recompile or rewrite a bit the code.
 
 ### Gpufit-addition
 This folder contains all the Gpufit customization needed to process SBS data. [Read this file](./gpufit-addition/readme.md) for more information about how to build the custom Gpufit version. You can also [download this fork](https://github.com/prevedel-lab/Gpufit), already containing the customizations. 
