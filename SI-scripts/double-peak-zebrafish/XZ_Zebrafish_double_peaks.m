@@ -25,7 +25,7 @@ experiment_settings.x_pixel_to_um   = 0.2 ;
 experiment_settings.y_pixel_to_um   = 0.2 ;
 
 experiment_settings.freq_num    = 100;
-AOM_diff = 0.04;
+AOM_diff = 0.04 + 0.1;
 
 experiment_settings.range_X     = 60; %in um
 experiment_settings.range_Y     = 32; %in um
@@ -53,6 +53,9 @@ data_LIA = data_LIA + y_shift;
 y = y + y_shift;
 
 [data_X, data_Y] = pipeline_preprocess(y, experiment_settings.freq_begin, experiment_settings.freq_end, experiment_settings.freq_num, experiment_settings.pixel_num, experiment_settings.n_planes) ;
+%% Manual correction for the first 2000 points
+% Some problem with the first data batch (a missing bit)
+data_X(:, 1:2000, 1) = data_X(:, 1:2000, 1) - (experiment_settings.freq_end - experiment_settings.freq_begin) / (experiment_settings.freq_num - 1);
 
 %% Single peak fitting
 initial_parameters = zeros(4, size(data_X, 2), 'single'); % Fits are done plane by plane

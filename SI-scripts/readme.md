@@ -5,16 +5,16 @@
 
 ## Double peak Zebrafish
 - data : Zebrafish XY and XZ
-- usage : Presence of double (and even triple !) peaks in a biological sample.
+- usage : Presence of double (and even triple) peaks in a biological sample.
 
 ## Optical Resolution XY
 - data : bead in agar 
-- usage : determination the optical XY resolution by imaging a bead in agar.
+- usage : determination of the optical XY resolution by imaging a bead in agar.
 
 ## Optical Resolution Z
-- data : bead in oil (?)
-- usage : determination the optical Z resolution by imaging a bead in oil.
+- data : immersion oil and cover slip edge
+- usage : determination of the optical Z resolution by imaging the edge between immersion oil and cover slip.
 
-## Bandwith range simulation
+## Bandwidth range simulation
 - data : synthetic lorenzian signals
-- usage : verifying the needed bandwith to accurately fit the signal.
+- usage : verifying the needed bandwidth to accurately fit the signal.

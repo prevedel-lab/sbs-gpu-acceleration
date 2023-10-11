@@ -6,7 +6,7 @@ The use of Matlab ensures compatibility with a wide range of data formats and pr
 The processing is GPU-accelerated (based on Gpufit), so a compatible Nvidia GPU-card (and CUDA) is needed to run this software.
 The library is designed to be flexible and easily extendable, making it a valuable tool for researchers in the field of SBS.
 
-This repository contains data and code used by Fan xxx during his work on the paper [xxxx]. Most of the code was written by Sebastian Hambura.
+This repository contains data and code used by Fan Yang during his work on the paper. Most of the code was written by Sebastian Hambura.
 
 ## Repository organisation 
 ### Matlab-pipeline
@@ -22,8 +22,6 @@ This folder contains all the Gpufit customization needed to process SBS data. [R
 This regroups different scripts and dataset used in the supplementary figures. The processing scripts are sometimes a bit different compared to the normal processing. [Click here](./SI-scripts/readme.md) for more information.
 
 ## References
-[todo for Fan and Robert]
-
 Przybylski, A., Thiel, B., Keller-Findeisen, J., Stock, B., and Bates, M. (2017). Gpufit: An open -source toolkit for GPU-accelerated curve fitting. Sci. Rep. 7, 15722
 
 ## Contact
