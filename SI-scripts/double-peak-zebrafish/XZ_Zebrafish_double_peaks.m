@@ -113,6 +113,6 @@ caxis([1 3]) ;
 % Exploring the data set
 % with the double peak criteria in 'Filtered'
 AIC_new_filter = AIC ;
-AIC_new_filter.filter = double_peaks ;
+AIC_new_filter.double_peaks = double_peaks ;
 experiment_settings.total_processing_time = toc(start) ;
 volume_display(experiment_settings, volume_single_peak, volume_double_peak, AIC_new_filter);
