@@ -2,6 +2,7 @@
 clear all;
 addpath("..\..\Matlab-pipeline\SBS_pipeline\")
 addpath("..\..\Matlab-pipeline\gpufit-matlab\")
+addpath("..\..\Matlab-pipeline\saveastiff_4.5\")
 % close all;
 clc;
 
@@ -81,7 +82,7 @@ constraints(8, :) = 1; % Max offset
     single_fit, constraints);
 
 %% Computing statistics
-[AIC] = pipeline_analyze_fit(data_X, data_Y, volume_single_peak, volume_double_peak);
+[AIC] = pipeline_analyze_fit(data_X, data_Y, experiment_settings, volume_single_peak, volume_double_peak);
 
 %% Displaying 
 experiment_settings.total_processing_time = toc(start) ;
@@ -89,11 +90,10 @@ experiment_settings.total_processing_time = toc(start) ;
 volume_display(experiment_settings, volume_single_peak, volume_double_peak, AIC);
 
 %% Export the data - saving to .tiff file
-addpath(".\saveastiff_4.5\");
 clear options;
 options.overwrite = true;
 %saveastiff(volume_double_peak.L1.shift .* AIC_mask + volume.shift .* ( 1 - AIC_mask), 'tiff_export\L1_shift.tif', options);
-saveastiff(volume.shift , 'tiff_export\shift.tif', options);
-saveastiff(volume.width , 'tiff_export\width.tif', options);
-saveastiff(volume_double_peak.L1.amplitude, 'tiff_export\L1_amplitude.tif', options);
-saveastiff(volume_double_peak.L2.amplitude, 'tiff_export\L2_amplitude.tif', options);
+saveastiff(volume.shift , 'tiff_export\XZ_shift.tif', options);
+saveastiff(volume.width , 'tiff_export\XZ_width.tif', options);
+saveastiff(volume.amplitude, 'tiff_export\XZ_amplitude.tif', options);
+saveastiff(volume.offset, 'tiff_export\XZ_offset.tif', options);

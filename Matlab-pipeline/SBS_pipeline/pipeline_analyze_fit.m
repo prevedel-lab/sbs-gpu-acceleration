@@ -1,4 +1,5 @@
-function [fit_statistics] = pipeline_analyze_fit(data_X, data_Y, volume_single_peak, volume_double_peak)
+function [fit_statistics] = pipeline_analyze_fit(data_X, data_Y, ...
+    experiment_settings, volume_single_peak, volume_double_peak)
 
     for z=1:size(data_Y, 3) % for every plane
         N = sum(volume_double_peak(z).weights > 0) ;
@@ -41,5 +42,11 @@ function [fit_statistics] = pipeline_analyze_fit(data_X, data_Y, volume_single_p
     fit_statistics.bic.delta = fit_statistics.bic.single - fit_statistics.bic.double ;
     fit_statistics.bic.double_or_single = fit_statistics.bic.double < fit_statistics.bic.single ;
     
+
     
+    % Values from pure water analysis
+    spectral_resolution = (experiment_settings.freq_end - experiment_settings.freq_begin) / experiment_settings.freq_num ;
+    n = 5 ;
+    delta = 0.5 ;
+    fit_statistics.double_peaks = double_peak_criteria(volume_double_peak, spectral_resolution, n, delta) ;
 end

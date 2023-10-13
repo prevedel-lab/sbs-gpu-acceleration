@@ -4,6 +4,7 @@
 clear all;
 addpath("..\..\Matlab-pipeline\SBS_pipeline\")
 addpath("..\..\Matlab-pipeline\gpufit-matlab\")
+addpath("..\..\Matlab-pipeline\saveastiff_4.5\")
 %% read the data from the file
 
 % Load data from zip file
@@ -84,38 +85,34 @@ constraints(8, :) = 1; % Max offset
     single_fit, constraints);
 
 %% Computing statistics
-[AIC] = pipeline_analyze_fit(data_X, data_Y, volume_single_peak, volume_double_peak);
-clf
-imagesc(volume_single_peak.shift);
-caxis([5.1 5.7])
+[AIC] = pipeline_analyze_fit(data_X, data_Y, experiment_settings, volume_single_peak, volume_double_peak);
+% Displaying single peak shift as an image
+%clf
+%imagesc(volume_single_peak.shift);
+%caxis([5.1 5.7])
+
+% Displaying douple peak criterai as an image
+% clf
+% imagesc(AIC.double_peaks);
+% colormap jet ;
+% colorbar
+% caxis([1 3]) ;
+% title("Double peaks")
+% % 4 = n is a bit too big
+% % 3 = 2 distinct peaks
+% % 2 = 1 big peak, and one smaller, a bit further away
+% % 1 = visually, only one peak
+% % 0 = AIC says single peak is better fit
+
 %%
 % Exploring the data set
 experiment_settings.total_processing_time = toc(start) ;
-%volume_display(experiment_settings, volume_single_peak, volume_double_peak, AIC);
-%% Computing Double peak criteria
+volume_display(experiment_settings, volume_single_peak, volume_double_peak, AIC);
 
-spectral_resolution = (experiment_settings.freq_end - experiment_settings.freq_begin) / experiment_settings.freq_num ;
-
-% Values from pure water analysis
-n = 5 ;
-delta = 0.5 ;
-
-double_peaks = double_peak_criteria(volume_double_peak, spectral_resolution, n, delta) ;
-clf
-%imagesc(double_peaks .* AIC.double_or_single);
-imagesc(double_peaks);
-colormap jet ;
-colorbar
-caxis([1 3]) ;
-% 4 = n is a bit too big
-% 3 = 2 distinct peaks
-% 2 = 1 big peak, and one smaller, a bit further away
-% 1 = visually, only one peak
-% 0 = AIC says single peak is better fit
-%%
-% Exploring the data set
-% with the double peak criteria in 'Filtered'
-AIC_new_filter = AIC ;
-AIC_new_filter.double_peaks = double_peaks ;
-experiment_settings.total_processing_time = toc(start) ;
-volume_display(experiment_settings, volume_single_peak, volume_double_peak, AIC_new_filter);
+%% Exporting tiff files
+clear options;
+options.overwrite = true;
+saveastiff(volume.shift , 'tiff_export\XZ_shift.tif', options);
+saveastiff(volume.width , 'tiff_export\XZ_width.tif', options);
+saveastiff(volume.amplitude, 'tiff_export\XZ_amplitude.tif', options);
+saveastiff(volume.offset, 'tiff_export\XZ_offset.tif', options);

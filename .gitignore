@@ -1,2 +1,4 @@
 Matlab-pipeline/Data/*
 *.txt
+SI-scripts/double-peak-zebrafish/tiff_export/*
+SI-scripts/optical-resolution-XY/tiff_export/*
