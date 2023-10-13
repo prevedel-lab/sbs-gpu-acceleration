@@ -22,7 +22,8 @@ This folder contains all the Gpufit customization needed to process SBS data. [R
 This regroups different scripts and dataset used in the supplementary figures. The processing scripts are sometimes a bit different compared to the normal processing. [Click here](./SI-scripts/readme.md) for more information.
 
 ## References
-Przybylski, A., Thiel, B., Keller-Findeisen, J., Stock, B., and Bates, M. (2017). Gpufit: An open -source toolkit for GPU-accelerated curve fitting. Sci. Rep. 7, 15722
+- Przybylski, A., Thiel, B., Keller-Findeisen, J., Stock, B., and Bates, M. (2017). Gpufit: An open -source toolkit for GPU-accelerated curve fitting. Sci. Rep. 7, 15722
+- Yoon-Oh Tak (2023). Multipage TIFF stack (https://www.mathworks.com/matlabcentral/fileexchange/35684-multipage-tiff-stack), MATLAB Central File Exchange. Retrieved October 13, 2023.  
 
 ## Contact
 - [Prevedel Lab, EMBL](https://www.prevedel.embl.de/)
