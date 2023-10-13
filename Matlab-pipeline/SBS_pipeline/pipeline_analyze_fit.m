@@ -41,6 +41,5 @@ function [fit_statistics] = pipeline_analyze_fit(data_X, data_Y, volume_single_p
     fit_statistics.bic.delta = fit_statistics.bic.single - fit_statistics.bic.double ;
     fit_statistics.bic.double_or_single = fit_statistics.bic.double < fit_statistics.bic.single ;
     
-
-
+    
 end

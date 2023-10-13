@@ -12,10 +12,6 @@ To use them, you need to have the Matlab binding from gpufit inside a folder cal
 Because of different CUDA versions, you might not be able to directly use the folder here. 
 Consider compiling again gpufit on your computer and with a compatible CUDA version to be sure it's working.
 
-## Example
-*process_data_xyscan.m* and *process_data_xzscan.m* provides 2 examples of how to use the pipeline.
-They are based on xxx dataset. #TODO : Fan approval ?
-
 ## Manual correction
 Due to a glitch in our setup, the first 2000 points we acquire need their X-coordinate slightly shifted.
 

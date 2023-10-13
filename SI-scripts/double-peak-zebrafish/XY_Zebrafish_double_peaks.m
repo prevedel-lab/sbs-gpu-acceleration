@@ -109,6 +109,7 @@ imagesc(double_peaks);
 colormap jet ;
 colorbar
 caxis([1 3]) ;
+title("Double peaks")
 % 4 = n is a bit too big
 % 3 = 2 distinct peaks
 % 2 = 1 big peak, and one smaller, a bit further away
