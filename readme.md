@@ -10,8 +10,8 @@ This repository contains data and code used by Fan Yang during his work on the p
 
 ## Repository organisation 
 ### Matlab-pipeline
-This is the software used to process and analyze the recorded data. You can test it with the included 2 datasets (XY and XZ plane of a Zebrafish).
-Read more about it [here](./Matlab-pipeline/readme.md).
+This is the software used to process and analyze the recorded data. Read more about it [here](./Matlab-pipeline/readme.md).
+To try it, go to *SI-scripts > douple-peak-zebrafish* : it contains the dataset and processing scripts of 2 datasets (XY and XZ plane of a zebrafish).
 
 The code and the precompiled binaries were tested and are running with the following configuration : Matlab 2021.b and Cuda 11.5. If you're running a different setup, you might have to recompile or rewrite a bit the code.
 
@@ -26,7 +26,7 @@ Przybylski, A., Thiel, B., Keller-Findeisen, J., Stock, B., and Bates, M. (2017)
 
 ## Contact
 - [Prevedel Lab, EMBL](https://www.prevedel.embl.de/)
-- [Link to Fan]()
+- [Link to Fan](https://people.ucas.edu.cn/~yangfan)
 
 ## Licence
 Copyright (C) 2022-2023 Sebastian Hambura
